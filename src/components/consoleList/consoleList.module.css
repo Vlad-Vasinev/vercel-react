@@ -1,0 +1,17 @@
+
+.consoleList{
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+.consoleListEl {
+    box-sizing: border-box;
+    padding: 15px;
+    background: #F8F8F7;
+    border-radius: 10px;
+    display: flex;
+}
+
+.consoleListEl+.consoleListEl {
+    margin-top: 10px;
+}

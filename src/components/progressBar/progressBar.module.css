@@ -1,0 +1,56 @@
+.frame {
+  right: 0;
+  position: absolute;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.circleBig {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.circleBig svg {
+  width: 50px;
+  height: 50px;
+}
+
+.circleBig .bg {
+  fill: none;
+  stroke-width: 10px;
+  stroke: #343035;
+}
+
+.progress {
+  fill: none;
+  stroke-width: 10px;
+  stroke: #97EAB9;
+  stroke-linecap: round;
+  stroke-dasharray: 326.56;
+  stroke-dashoffset: 60;
+  transform-origin: 50% 50%;
+  /* animation-name: big;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1.5s; */
+  /* animation-delay: 1.5s; */
+  /* animation: big 1.5s ease-in-out; */
+}
+
+@keyframes big {
+  from {
+    stroke-dashoffset: 326.56;
+  }
+
+  to {
+    stroke-dashoffset: 60;
+  }
+}

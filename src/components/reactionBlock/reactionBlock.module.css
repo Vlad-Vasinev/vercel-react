@@ -1,0 +1,117 @@
+.reactionImg {
+    position: relative;
+    margin-bottom: 92px;
+}
+
+.reactionImgEl {
+    max-width: 640px;
+    width: 100%;
+    text-align: center;
+    height: 360px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 209px);
+    grid-gap: 34px;
+    overflow-y: scroll;
+}
+
+.reactionList {
+    box-sizing: border-box;
+    padding: 4px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    max-width: 254px;
+    width: 100%;
+    bottom: -44px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.reactionEl {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+}
+
+.reactionBtn {
+    padding: 21px;
+}
+
+.reactionBtn svg path {
+    transition: all .3s;
+}
+
+.reactionBtn:hover svg path {
+    fill: #A600F9;
+}
+
+.reactionEl svg path {
+    fill: #ffffff;
+}
+
+.reactionEl+.reactionEl {
+    margin-left: 4px;
+}
+
+.reactionEl:nth-child(1) {
+    background-color: #97EAB9;
+}
+
+.reactionEl:nth-child(2) {
+    background-color: #FF868E;
+}
+
+.reactionEl:nth-child(3) {
+    background-color: #FFD280;
+}
+
+.imgInner {
+    cursor: pointer;
+    max-width: 209px;
+    height: 140px;
+    width: 100%;
+    transition: all .3s;
+    position: relative;
+}
+
+.imgInner::after {
+    top: 0;
+    left: 0;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 134, 142, 0.6);
+    border-radius: 20px;
+    z-index: 100;
+    opacity: 0;
+}
+
+.imgInner:hover::after {
+    opacity: 1;
+}
+
+.imgInner img {
+    border-radius: 10%;
+    width: 100%;
+    object-fit: cover;
+    height: 140px;
+}
+
+@media(max-width: 550px) {
+    .reactionImgEl {
+        grid-template-columns: repeat(auto-fit, 180px);
+        grid-column-gap: 20px;
+        grid-row-gap: 28px;
+    }
+
+    .imgInner {
+        max-width: 180px;
+    }
+}

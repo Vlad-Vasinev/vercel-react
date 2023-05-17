@@ -1,0 +1,68 @@
+.consoleListEl {
+    box-sizing: border-box;
+    padding: 15px;
+    background: #F8F8F7;
+    border-radius: 10px;
+    display: flex;
+}
+
+.consoleListEl+.consoleListEl {
+    margin-top: 10px;
+}
+
+.consoleListTime {
+    margin-right: 20px;
+    max-width: 60px;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-family: 'Jost-Regular';
+    font-size: 16px;
+    line-height: 24px;
+    color: #1D1D1D;
+}
+
+.consoleListId {
+    font-weight: 400;
+    font-family: 'Jost-Regular';
+    font-size: 16px;
+    line-height: 24px;
+    color: #8C8C8C;
+    margin-right: auto;
+}
+
+.consoleListId span {
+    color: #000000;
+    font-weight: 500;
+    font-family: 'Jost-Medium';
+}
+
+.consoleListIcon{
+    width: 20px;
+    height: 20px;
+    display: grid;
+    justify-content: center;
+    align-items: center; 
+}
+
+.consoleListIcon svg{
+    width: 20px;
+    height: 20px;
+}
+
+@media(max-width: 390px) {  
+    .consoleListEl{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .consoleListTime{
+        margin-right: 0;
+        margin-bottom: 16px;
+    }
+
+    .consoleListId{
+        margin-bottom: 16px;
+    }
+    
+}

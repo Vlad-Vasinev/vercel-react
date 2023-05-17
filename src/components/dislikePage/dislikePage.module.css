@@ -1,0 +1,202 @@
+.reactionInner {
+    display: flex;
+    justify-content: center;
+    padding: 70px 10px 30px;
+}
+
+.reactionSecondary {
+    max-width: 680px;
+    width: 100%;
+    margin-left: 150px;
+}
+
+
+.dislikeBlock {
+    max-width: 680px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.blockDislike {
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    margin-top: 10px;
+    max-width: 640px;
+    width: 100%;
+    text-align: center;
+    height: 360px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 209px);
+    grid-gap: 34px;
+    overflow-y: scroll;
+}
+
+.likesItem {
+    position: relative;
+    max-width: 209px;
+    height: 140px;
+    width: 100%;
+}
+
+.likesItem img {
+    width: 100%;
+    object-fit: cover;
+    height: 140px;
+}
+
+<<<<<<< HEAD:Desktop/React=))/cats/react-cats/cats/src/components/dislikePage/dislikePage.module.css
+.likesItem:hover .delItem{
+=======
+.likesItem:hover .delItem {
+>>>>>>> 0ae5fc78e77f79aed20a8d05febcfa1478914c3e:src/components/dislikePage/dislikePage.module.css
+    display: grid;
+}
+
+.delItem {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF868E;
+    border-radius: 10px;
+    display: none;
+}
+
+@media(max-width: 1220px) {
+    .reactionSecondary {
+        margin-left: 30px;
+    }
+}
+
+@media(max-width: 1090px) {
+    .reactionInner {
+        flex-direction: column;
+    }
+
+    .reactionPrimary {
+        margin-bottom: 46px;
+    }
+
+    .reactionSecondary {
+        margin-left: 0;
+    }
+
+    .blockDislike {
+        height: auto;
+    }
+
+}
+
+@media(max-width: 730px) {
+    .blockDislike {
+        padding: 14px 2px;
+    }
+<<<<<<< HEAD:Desktop/React=))/cats/react-cats/cats/src/components/dislikePage/dislikePage.module.css
+=======
+
+    .reactionInner {
+        display: flex;
+        justify-content: center;
+        padding: 70px 10px 30px;
+    }
+
+    .reactionSecondary {
+        max-width: 680px;
+        width: 100%;
+        margin-left: 150px;
+    }
+
+
+    .dislikeBlock {
+        max-width: 680px;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .blockDislike {
+        padding: 20px;
+        border-radius: 20px;
+        background-color: #ffffff;
+        margin-top: 10px;
+        max-width: 640px;
+        width: 100%;
+        text-align: center;
+        height: 360px;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, 209px);
+        grid-gap: 34px;
+        overflow-y: scroll;
+    }
+
+    .likesItem {
+        position: relative;
+        max-width: 209px;
+        height: 140px;
+        width: 100%;
+    }
+
+    .likesItem img {
+        width: 100%;
+        object-fit: cover;
+        height: 140px;
+    }
+
+    .likesItem:hover .delItem {
+        display: grid;
+    }
+
+    .delItem {
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 40px;
+        height: 40px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        background-color: #FF868E;
+        border-radius: 10px;
+        display: none;
+    }
+
+    @media(max-width: 1220px) {
+        .reactionSecondary {
+            margin-left: 30px;
+        }
+    }
+
+    @media(max-width: 1090px) {
+        .reactionInner {
+            flex-direction: column;
+        }
+
+        .reactionPrimary {
+            margin-bottom: 46px;
+        }
+
+        .reactionSecondary {
+            margin-left: 0;
+        }
+
+        .blockDislike {
+            height: auto;
+        }
+
+    }
+
+    @media(max-width: 730px) {
+        .blockDislike {
+            padding: 14px 2px;
+        }
+    }
+>>>>>>> 0ae5fc78e77f79aed20a8d05febcfa1478914c3e:src/components/dislikePage/dislikePage.module.css
+}

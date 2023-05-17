@@ -1,0 +1,25 @@
+.chessWrapper {
+    /* height: 100vh; */
+    height: 100%;
+    padding-bottom: 40px;
+    background-color: #989EAA;
+}
+
+.board {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(8, 80px);
+    grid-template-rows: repeat(8, 80px);
+    justify-content: center;
+    align-items: center;
+}
+
+.flexWrapper{
+    column-gap: 10px;
+}
+
+.cell {
+    width: 80px;
+    height: 80px;
+    background-color: aqua;
+}

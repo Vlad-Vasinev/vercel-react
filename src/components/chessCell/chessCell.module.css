@@ -1,0 +1,8 @@
+.cell {
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+}

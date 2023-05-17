@@ -1,0 +1,31 @@
+
+.linkInner{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.navLink {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    /* background: #FBE0DC; */
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.linkInfo {
+    box-sizing: border-box;
+    max-width: 146px;
+    font-weight: 500;
+    font-family: 'Jost-Medium';
+    width: 100%;
+    background: #FF868E;
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding: 9px 20px;
+}

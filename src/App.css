@@ -1,0 +1,188 @@
+@font-face {
+  src: url('../src/assets/fonts/Jost-Regular.woff');
+  font-weight: 400;
+  font-family: 'Jost-Regular';
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('../src/assets/fonts/Jost-Medium.woff');
+  font-weight: 500;
+  font-family: 'Jost-Medium';
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before *::after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none !important;
+  transition: all .3s;
+  display: inline-block;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  padding: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: none;
+}
+
+.App {
+  position: relative;
+  height: auto;
+  text-align: center;
+  /* padding-bottom: 60px; */
+  overflow-x: hidden;
+}
+
+.decoration {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #FBE0DC;
+}
+
+.decoration_1 {
+  top: 20px;
+}
+
+.decoration_2 {
+  top: 60px;
+}
+
+.container {
+  max-width: 1460px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.primaryTitle {
+  text-align: left;
+  font-size: 44px;
+  line-height: 58px;
+  font-weight: 500;
+  font-family: 'Jost-Medium';
+  margin-bottom: 60px;
+}
+
+.primarySubtitle {
+  margin-top: 10px;
+  display: block;
+  font-weight: 400;
+  font-family: 'Jost-Regular';
+  font-size: 20px;
+  line-height: 29px;
+}
+
+.secondaryTitle {
+  text-align: left;
+  color: #1D1D1D;
+  font-family: 'Jost-Medium';
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  max-width: 106px;
+  width: 100%;
+  height: 24px;
+  text-align: left;
+  margin-bottom: 80px;
+}
+
+.logo img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 24px;
+  height: auto;
+}
+
+.themeButtons{
+  position: absolute;
+  top: 21px;
+  z-index: 100;
+  right: 28px;
+  max-width: 120px;
+  width: 100%;
+  background-color: #Ffffff;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 4px 6px;
+  height: 40px;
+}
+
+.themeBtn {
+  height: 31px;
+  position: relative;
+  width: 50%;
+}
+
+.themeBtn:hover svg path{
+    fill: #B4B7FF;
+}
+
+.themeBtn svg{
+  width: 31px;
+  height: 31px;
+  width: 100%;
+}
+
+.themeBtn svg path{
+  transition: all .3s;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media(max-width: 1360px) {
+  .logo {
+    margin-bottom: 30px;
+  }
+}
