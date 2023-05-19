@@ -40,11 +40,7 @@
     transition: all .3s;
 }
 
-<<<<<<< HEAD:Desktop/React=))/cats/react-cats/cats/src/components/likesPage/likesPage.module.css
-.likesItem:hover .delItem{
-=======
 .likesItem:hover .delItem {
->>>>>>> 0ae5fc78e77f79aed20a8d05febcfa1478914c3e:src/components/likesPage/likesPage.module.css
     display: grid;
 }
 
@@ -98,8 +94,6 @@
     .likesBlock {
         padding: 14px 2px;
     }
-<<<<<<< HEAD:Desktop/React=))/cats/react-cats/cats/src/components/likesPage/likesPage.module.css
-=======
 
     .reactionInner {
         display: flex;
@@ -198,5 +192,4 @@
             padding: 14px 2px;
         }
     }
->>>>>>> 0ae5fc78e77f79aed20a8d05febcfa1478914c3e:src/components/likesPage/likesPage.module.css
 }

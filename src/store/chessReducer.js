@@ -1,7 +1,4 @@
-<<<<<<< HEAD:Desktop/React=))/cats/react-cats/cats/src/store/chessReducer.js
-=======
 
->>>>>>> 0ae5fc78e77f79aed20a8d05febcfa1478914c3e:src/store/chessReducer.js
 const chess = {
     cells: [
         { id: "a1", coordinatex: 0, coordinatey: 0, color: "#7CC991", }, // 7CC991 - light green

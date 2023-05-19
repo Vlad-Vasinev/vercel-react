@@ -1,7 +1,4 @@
-<<<<<<< HEAD:Desktop/React=))/cats/react-cats/cats/src/components/likesPage/LikesPage.js
-=======
 
->>>>>>> 0ae5fc78e77f79aed20a8d05febcfa1478914c3e:src/components/likesPage/LikesPage.js
 import React, { useState } from "react";
 
 import classes from './likesPage.module.css';

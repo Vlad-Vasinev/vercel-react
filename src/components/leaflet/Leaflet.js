@@ -31,6 +31,8 @@ const LeafletMap = () => {
     console.log(position);
     console.log(mapZoom);
 
+    var L = window.L;
+
     delete L.Icon.Default.prototype._getIconUrl;
 
     L.Icon.Default.mergeOptions({

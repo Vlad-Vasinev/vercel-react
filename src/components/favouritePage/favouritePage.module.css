@@ -40,11 +40,7 @@
     width: 100%;
 }
 
-<<<<<<< HEAD:Desktop/React=))/cats/react-cats/cats/src/components/favouritePage/favouritePage.module.css
-.likesItem:hover .delItem{
-=======
 .likesItem:hover .delItem {
->>>>>>> 0ae5fc78e77f79aed20a8d05febcfa1478914c3e:src/components/favouritePage/favouritePage.module.css
     display: grid;
 }
 
@@ -98,8 +94,6 @@
     .blockFavourite {
         padding: 14px 2px;
     }
-<<<<<<< HEAD:Desktop/React=))/cats/react-cats/cats/src/components/favouritePage/favouritePage.module.css
-=======
 
     .reactionInner {
         display: flex;
@@ -199,5 +193,4 @@
         }
     }
 
->>>>>>> 0ae5fc78e77f79aed20a8d05febcfa1478914c3e:src/components/favouritePage/favouritePage.module.css
 }

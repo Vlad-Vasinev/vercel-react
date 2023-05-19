@@ -69,11 +69,7 @@
     margin-bottom: 20px;
 }
 
-<<<<<<< HEAD:Desktop/React=))/cats/react-cats/cats/src/components/homePage/homePage.module.css
-.download{
-=======
 .download {
->>>>>>> 0ae5fc78e77f79aed20a8d05febcfa1478914c3e:src/components/homePage/homePage.module.css
     right: 20px;
     top: 20px;
     position: absolute;
@@ -88,28 +84,16 @@
     line-height: 100%;
 }
 
-<<<<<<< HEAD:Desktop/React=))/cats/react-cats/cats/src/components/homePage/homePage.module.css
-.download:hover{
-=======
 .download:hover {
->>>>>>> 0ae5fc78e77f79aed20a8d05febcfa1478914c3e:src/components/homePage/homePage.module.css
     color: #3400F2;
     border-bottom: 1px solid #3400F2;
 }
 
-<<<<<<< HEAD:Desktop/React=))/cats/react-cats/cats/src/components/homePage/homePage.module.css
-.download:hover svg path{
-    fill: #ffffff;
-}
-
-.download svg{
-=======
 .download:hover svg path {
     fill: #ffffff;
 }
 
 .download svg {
->>>>>>> 0ae5fc78e77f79aed20a8d05febcfa1478914c3e:src/components/homePage/homePage.module.css
     margin: 0 auto 2px;
     display: block;
     object-fit: cover;
@@ -117,12 +101,8 @@
     max-height: 110px;
     height: auto;
 }
-<<<<<<< HEAD:Desktop/React=))/cats/react-cats/cats/src/components/homePage/homePage.module.css
-.download svg path{ 
-=======
 
 .download svg path {
->>>>>>> 0ae5fc78e77f79aed20a8d05febcfa1478914c3e:src/components/homePage/homePage.module.css
     transition: all .3s;
 }
 
@@ -158,44 +138,23 @@
         margin-top: 40px;
     }
 
-<<<<<<< HEAD:Desktop/React=))/cats/react-cats/cats/src/components/homePage/homePage.module.css
-    .download{
-        right: 10px;
-    }
-
-    .download img{
-=======
     .download {
         right: 10px;
     }
 
     .download img {
->>>>>>> 0ae5fc78e77f79aed20a8d05febcfa1478914c3e:src/components/homePage/homePage.module.css
         width: 70%;
     }
 
 }
 
-<<<<<<< HEAD:Desktop/React=))/cats/react-cats/cats/src/components/homePage/homePage.module.css
-@media(max-width: 576px){
-    .download{
-=======
 @media(max-width: 576px) {
     .download {
->>>>>>> 0ae5fc78e77f79aed20a8d05febcfa1478914c3e:src/components/homePage/homePage.module.css
         max-width: 50px;
     }
 }
 
 @media(max-width: 450px) {
-<<<<<<< HEAD:Desktop/React=))/cats/react-cats/cats/src/components/homePage/homePage.module.css
-    .homeSecondary{
-        max-height: 350px;
-    }
-    .homeSecondary img{
-        max-height: 350px;
-    }
-=======
     .homeSecondary {
         max-height: 350px;
     }
@@ -369,5 +328,4 @@
             max-height: 350px;
         }
     }
->>>>>>> 0ae5fc78e77f79aed20a8d05febcfa1478914c3e:src/components/homePage/homePage.module.css
 }
