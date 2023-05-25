@@ -170,7 +170,7 @@ const Breeds = () => {
                         latitude: 40.7811, //45.4211
                         zoom: 12
                     }}
-                    mapboxAccessToken="pk.eyJ1IjoidmxhZHZhc2luZXYiLCJhIjoiY2xpMzhvaWMxMGRnZTNlbXZqbDA0aGI0eSJ9.2PHt8q4XjKlD8Es3tt0-_g"
+                    mapboxAccessToken="pk.eyJ1IjoidmxhZHZhc2luZXYiLCJhIjoiY2xpMzd2MnlhMmV4ajNkbnQ2YjlzY2wxZyJ9.vmimI0yPvHzI48xMTztqJg" //pk.eyJ1IjoidmxhZHZhc2luZXYiLCJhIjoiY2xpMzhvaWMxMGRnZTNlbXZqbDA0aGI0eSJ9.2PHt8q4XjKlD8Es3tt0-_g
                     style={{ width: "100%", height: 500 }}
                     mapStyle="mapbox://styles/mapbox/navigation-night-v1"
                     >
