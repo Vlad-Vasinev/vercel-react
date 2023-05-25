@@ -15,6 +15,9 @@ import LeafletMap from "../leaflet/Leaflet";
 
 import ReactMapGl, { Layer, ScaleControl, NavigationControl, GeolocateControl, FullscreenControl } from "react-map-gl";
 
+import mapboxgl from 'mapbox-gl';
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default; // eslint-disable-line
+
 const Breeds = () => {
 
     const counterState = useSelector(state => state.breeds.counter);
