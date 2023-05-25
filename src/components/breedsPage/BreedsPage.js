@@ -13,6 +13,8 @@ import { themeLightCreator } from "../../store/themeReducer";
 import CustomLoad from "../customLoad/CustomLoad";
 import LeafletMap from "../leaflet/Leaflet";
 
+import ReactMapGl, { Layer, ScaleControl, NavigationControl, GeolocateControl, FullscreenControl } from "react-map-gl";
+
 const Breeds = () => {
 
     const counterState = useSelector(state => state.breeds.counter);
@@ -69,6 +71,41 @@ const Breeds = () => {
         }
     }
 
+    const parkLayer = {
+        'id': 'add-3d-buildings',
+            'source': 'composite',
+                'source-layer': 'building',
+                    'filter': ['==', 'extrude', 'true'],
+                        'type': 'fill-extrusion',
+                            'minzoom': 15,
+                                'paint': {
+            'fill-extrusion-color': '#aaa',
+
+                // Use an 'interpolate' expression to
+                // add a smooth transition effect to
+                // the buildings as the user zooms in.
+                'fill-extrusion-height': [
+                    'interpolate',
+                    ['linear'],
+                    ['zoom'],
+                    15,
+                    0,
+                    15.05,
+                    ['get', 'height']
+                ],
+                    'fill-extrusion-base': [
+                        'interpolate',
+                        ['linear'],
+                        ['zoom'],
+                        15,
+                        0,
+                        15.05,
+                        ['get', 'min_height']
+                    ],
+                        'fill-extrusion-opacity': 0.6
+        }
+    }
+
     return (
         <div
             className={classes.breedsPageWrapper}
@@ -122,7 +159,27 @@ const Breeds = () => {
                 amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
             </div>
             <div >
+                <h2 style={{ marginBottom: "20px", marginTop: "20px" }} className="">Leaflet map</h2>
                 <LeafletMap></LeafletMap>
+            </div>
+            <div style={{ marginTop: "100px" }}>
+                <h2 style={{ marginBottom: "20px", marginTop: "20px" }} className="">MapBox map</h2>
+                <ReactMapGl
+                    initialViewState={{
+                        longitude: -74.0630, //-75.6903
+                        latitude: 40.7811, //45.4211
+                        zoom: 12
+                    }}
+                    mapboxAccessToken="pk.eyJ1IjoidmxhZHZhc2luZXYiLCJhIjoiY2xpMzhvaWMxMGRnZTNlbXZqbDA0aGI0eSJ9.2PHt8q4XjKlD8Es3tt0-_g"
+                    style={{ width: "100%", height: 500 }}
+                    mapStyle="mapbox://styles/mapbox/navigation-night-v1"
+                    >
+                        <Layer {...parkLayer} />
+                        <ScaleControl />
+                        <NavigationControl position="top-left"/>
+                        <GeolocateControl position="top-left"/>
+                        <FullscreenControl position="top-left"/>
+                    </ReactMapGl>
             </div>
             <div>
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
