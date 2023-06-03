@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState, useCallback } from "react";
+import React, { useRef, useState, useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import classes from './breedsPage.module.css';
@@ -17,7 +17,7 @@ import ReactMapGl,
 {
     Layer, ScaleControl,
     NavigationControl, GeolocateControl,
-    FullscreenControl, Marker, Popup, MarkerDragEvent
+    FullscreenControl, Marker, Popup, Source
 } from "react-map-gl";
 import { LngLat } from 'react-map-gl';
 import markerIcon from '../../assets/images/marker-icon.png';
@@ -29,6 +29,15 @@ import YorkSecondImg from '../../assets/images/york2.PNG';
 import mapboxgl from 'mapbox-gl';
 mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default; // eslint-disable-line
 
+import 'mapbox-gl/dist/mapbox-gl.css';
+import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css';
+
+import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
+// import Directions from 'react-map-gl-directions';
+
+
+import * as turf from '@turf/turf';
+
 const Breeds = () => {
 
     const counterState = useSelector(state => state.breeds.counter);
@@ -37,7 +46,6 @@ const Breeds = () => {
     const themeAct = useSelector(state => state.theme.themeActive);
 
     const dispatch = useDispatch();
-
     const [character, setCharacter] = useState(false);
 
 
@@ -130,8 +138,6 @@ const Breeds = () => {
         latitude: 40.78954841007655,
     });
 
-    // const [popupOpen, setPopupOpen] = useState(false);
-
     const [showPopupFirst, setShowPopupFirst] = React.useState(true);
     const [showPopupSecond, setShowPopupSecond] = React.useState(true);
 
@@ -150,6 +156,46 @@ const Breeds = () => {
             latitude: event.lngLat.lat
         });
     }, []);
+
+    const [viewport, setViewport] = useState({
+        width: '100%',
+        height: '500px',
+        latitude: 40.7811,
+        longitude: -74.0630,
+        zoom: 12,
+        scrollZoom: false,
+    });
+
+    // const [start, setStart] = useState(0);
+    // const [end, setEnd] = useState(0);
+
+    // function handleMapClick(event) {
+    //     const { lngLat } = event;
+    //     if (!start) {
+    //         setStart(lngLat);
+    //     } else if (!end) {
+    //         setEnd(lngLat);
+    //     }
+    // }
+
+    // function handleDirectionsChange(event) {
+    //     console.log(event);
+    // }
+
+    const mapRef = useRef()
+    const handleViewportChange = useCallback(
+        (newViewport) => setViewport(newViewport),
+        []
+    )
+
+    const handleGeocoderViewportChange = useCallback((newViewport) => {
+        const geocoderDefaultOverrides = { transitionDuration: 1000 }
+
+        return handleViewportChange({
+            ...newViewport,
+            ...geocoderDefaultOverrides
+        })
+    }, [])
 
     return (
         <div
@@ -210,33 +256,38 @@ const Breeds = () => {
             <div style={{ marginTop: "100px" }}>
                 <h2 style={{ marginBottom: "20px", marginTop: "20px" }} className="">MapBox map</h2>
                 <ReactMapGl
-                    initialViewState={{
-                        longitude: -74.0630, //-75.6903 -74.0630  -74.0430
-                        latitude: 40.7811, //45.4211    40.7811   40.7611
-                        zoom: 12,
-                        scrollZoom: false,
-                    }}
+                    ref={mapRef}
+                    initialViewState={viewport}
+                    onViewportChange={handleViewportChange}
+                    // initialViewState={{
+                    //     longitude: -74.0630,
+                    //     latitude: 40.7811,
+                    //     zoom: 12,
+                    //     scrollZoom: false,
+                    // }}
                     scrollZoom="disable"
                     mapboxAccessToken="pk.eyJ1IjoidmxhZHZhc2luZXYiLCJhIjoiY2xpMzd2MnlhMmV4ajNkbnQ2YjlzY2wxZyJ9.vmimI0yPvHzI48xMTztqJg" //pk.eyJ1IjoidmxhZHZhc2luZXYiLCJhIjoiY2xpMzhvaWMxMGRnZTNlbXZqbDA0aGI0eSJ9.2PHt8q4XjKlD8Es3tt0-_g
                     style={{ width: "100%", height: 500 }}
                     mapStyle="mapbox://styles/mapbox/navigation-night-v1"
+
                 >
+
                     <Layer {...parkLayer} />
                     <ScaleControl />
                     <NavigationControl position="top-left" />
                     <GeolocateControl position="top-left" />
                     <FullscreenControl position="top-left" />
                     <Marker draggable
-                    onClick={() => setShowPopupFirst(true)}
-                    onDrag={onFirstMarkerDrag}
-                    longitude={firstMarker.longitude}
-                    latitude={firstMarker.latitude} anchor="bottom" >
+                        onClick={() => setShowPopupFirst(true)}
+                        onDrag={onFirstMarkerDrag}
+                        longitude={firstMarker.longitude}
+                        latitude={firstMarker.latitude} anchor="bottom" >
                         <img src={markerIcon} />
                     </Marker>
                     <Marker draggable
-                    onDrag={onSecondMarkerDrag}
-                    longitude={secondMarker.longitude}
-                    latitude={secondMarker.latitude} anchor="bottom" >
+                        onDrag={onSecondMarkerDrag}
+                        longitude={secondMarker.longitude}
+                        latitude={secondMarker.latitude} anchor="bottom" >
                         <img src={markerIcon} />
                     </Marker>
                     {showPopupFirst && (
@@ -250,7 +301,7 @@ const Breeds = () => {
                             <br></br>
                             {firstMarker.latitude}
                             <br></br>
-                            <img style={{width: "100%", height: "150px"}} src={YorkFirstImg} alt="New York's day"></img>
+                            <img style={{ width: "100%", height: "150px" }} src={YorkFirstImg} alt="New York's day"></img>
                         </Popup>)}
                     {showPopupSecond && (
                         <Popup longitude={secondMarker.longitude} latitude={secondMarker.latitude}
@@ -263,8 +314,15 @@ const Breeds = () => {
                             <br></br>
                             {secondMarker.latitude}
                             <br></br>
-                            <img style={{width: "100%", height: "150px"}} src={YorkSecondImg} alt="New York's night"></img>
+                            <img style={{ width: "100%", height: "150px" }} src={YorkSecondImg} alt="New York's night"></img>
                         </Popup>)}
+                    {/* <Directions
+                        mapRef={mapRef}
+                        mapboxApiAccessToken="pk.eyJ1IjoidmxhZHZhc2luZXYiLCJhIjoiY2xpMzd2MnlhMmV4ajNkbnQ2YjlzY2wxZyJ9.vmimI0yPvHzI48xMTztqJg"
+                        position="bottom-right"
+                        unit="metric"
+                        language="pt-BR"
+                    /> */}
                 </ReactMapGl>
             </div>
             <div>
